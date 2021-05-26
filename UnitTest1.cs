@@ -15,7 +15,7 @@ namespace HomeTaskNumber2
         private readonly string testPageUrl = "http://automationpractice.com/index.php";
 
         #region Locators
-        private readonly By loginButtonMainPage = By.CssSelector("a.login");
+        private readonly By signinButtonMainPage = By.CssSelector("a.login"); //By.XPath("//a[contains(text(), 'Sign in')]");
         private readonly By emailField = By.XPath("//form[@class='box']//input[@name='email']"); //By.CssSelector("#email");
         private readonly By passwordField = By.XPath("//input[@name='passwd']"); //By.CssSelector("input[name='passwd']");
         private readonly By signinButton = By.CssSelector("button[name='SubmitLogin']"); //By.XPath("//button[@name='SubmitLogin']"); //By.Id("SubmitLogin");
@@ -41,8 +41,8 @@ namespace HomeTaskNumber2
         public void Test1(string email, string password)
         {
             WebDriverWait wait = new(driver, TimeSpan.FromSeconds(5)); //explicit wait declaration
-            wait.Until(ExpectedConditions.ElementIsVisible(loginButtonMainPage));
-            driver.FindElement(loginButtonMainPage).Click();
+            wait.Until(ExpectedConditions.ElementIsVisible(signinButtonMainPage));
+            driver.FindElement(signinButtonMainPage).Click();
             IWebElement emailInput = driver.FindElement(emailField);
             wait.Until(ExpectedConditions.ElementIsVisible(emailField));
             emailInput.Clear();
@@ -66,8 +66,8 @@ namespace HomeTaskNumber2
         public void Test2(string email, string password)
         {
             WebDriverWait wait = new(driver, TimeSpan.FromSeconds(5)); //explicit wait declaration
-            wait.Until(ExpectedConditions.ElementIsVisible(loginButtonMainPage));
-            driver.FindElement(loginButtonMainPage).Click();
+            wait.Until(ExpectedConditions.ElementIsVisible(signinButtonMainPage));
+            driver.FindElement(signinButtonMainPage).Click();
             IWebElement emailInput = driver.FindElement(emailField);
             wait.Until(ExpectedConditions.ElementIsVisible(emailField));
             emailInput.Clear();
