@@ -34,10 +34,10 @@ namespace HomeTaskNumber2
             driver.Navigate().GoToUrl(testPageUrl);
         }
 
+        [TestCaseSource("TestData")]
         [Author("AlexGrech")]
         [Category("Test case ID: 2")]
         [Description("Verify that it is possible to login with valid credentials")]
-        [TestCaseSource("TestData")]
         public void Test1(string email, string password)
         {
             WebDriverWait wait = new(driver, TimeSpan.FromSeconds(5)); //explicit wait declaration
@@ -61,11 +61,11 @@ namespace HomeTaskNumber2
             Assert.IsTrue(driver.FindElement(errorMessage).Displayed);
         }
 
+        [TestCase("JohnDoe", "passw0rd")]
         [Ignore("alternative example")]
         [Author("AlexGrech")]
         [Category("Test case ID: 2")]
         [Description("Verify that it is possible to login with valid credentials")]
-        [TestCase("JohnDoe", "passw0rd")]
         public void Test2(string email, string password)
         {
             WebDriverWait wait = new(driver, TimeSpan.FromSeconds(5)); //explicit wait declaration
@@ -84,11 +84,11 @@ namespace HomeTaskNumber2
             Assert.IsTrue(driver.FindElement(errorMessage).Displayed);
         }
 
+        [TestCase("LiliaJY", "isNotMe")]
         [Ignore("alternative example")]
         [Author("AlexGrech")]
         [Category("Test case ID: 2")]
         [Description("Verify that it is possible to login with valid credentials")]
-        [TestCase("LiliaJY", "isNotMe")]
         public void Test3(string email, string password)
         {
             WebDriverWait wait = new(driver, TimeSpan.FromSeconds(5)); //explicit wait declaration
@@ -107,11 +107,11 @@ namespace HomeTaskNumber2
             Assert.IsTrue(driver.FindElement(errorMessage).Displayed);
         }
 
+        [TestCase("GoingTo", "BeAuto!")]
         [Ignore("alternative example")]
         [Author("AlexGrech")]
         [Category("Test case ID: 2")]
         [Description("Verify that it is possible to login with valid credentials")]
-        [TestCase("GoingTo", "BeAuto!")]
         public void Test4(string email, string password)
         {
             WebDriverWait wait = new(driver, TimeSpan.FromSeconds(5)); //explicit wait declaration
