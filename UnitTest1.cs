@@ -34,6 +34,7 @@ namespace HomeTaskNumber2
             driver.Navigate().GoToUrl(testPageUrl);
         }
 
+        [Parallelizable]
         [TestCaseSource("TestData")]
         [Author("AlexGrech")]
         [Category("Test case ID: 2")]
@@ -56,7 +57,7 @@ namespace HomeTaskNumber2
             Assert.IsTrue(driver.FindElement(errorMessage).Displayed);
         }
 
-        
+        [Parallelizable]
         [TestCase("JohnDoe", "passw0rd")]
         [TestCase("LiliaJY", "isNotMe")]
         [TestCase("GoingTo", "BeAuto!")]
