@@ -61,8 +61,8 @@ namespace HomeTaskNumber2
             Assert.IsTrue(driver.FindElement(errorMessage).Displayed);
         }
 
-        [TestCase("JohnDoe", "passw0rd")]
         [Ignore("alternative example")]
+        [TestCase("JohnDoe", "passw0rd")]
         [Author("AlexGrech")]
         [Category("Test case ID: 2")]
         [Description("Verify that it is possible to login with valid credentials")]
@@ -84,8 +84,8 @@ namespace HomeTaskNumber2
             Assert.IsTrue(driver.FindElement(errorMessage).Displayed);
         }
 
-        [TestCase("LiliaJY", "isNotMe")]
         [Ignore("alternative example")]
+        [TestCase("LiliaJY", "isNotMe")]
         [Author("AlexGrech")]
         [Category("Test case ID: 2")]
         [Description("Verify that it is possible to login with valid credentials")]
@@ -107,8 +107,8 @@ namespace HomeTaskNumber2
             Assert.IsTrue(driver.FindElement(errorMessage).Displayed);
         }
 
-        [TestCase("GoingTo", "BeAuto!")]
         [Ignore("alternative example")]
+        [TestCase("GoingTo", "BeAuto!")]
         [Author("AlexGrech")]
         [Category("Test case ID: 2")]
         [Description("Verify that it is possible to login with valid credentials")]
