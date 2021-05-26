@@ -41,78 +41,29 @@ namespace HomeTaskNumber2
         public void Test1(string email, string password)
         {
             WebDriverWait wait = new(driver, TimeSpan.FromSeconds(5)); //explicit wait declaration
-
             wait.Until(ExpectedConditions.ElementIsVisible(loginButtonMainPage));
             driver.FindElement(loginButtonMainPage).Click();
-
             IWebElement emailInput = driver.FindElement(emailField);
             wait.Until(ExpectedConditions.ElementIsVisible(emailField));
             emailInput.Clear();
             emailInput.SendKeys(email);
-
             IWebElement passInput = driver.FindElement(passwordField);
             passInput.Clear();
             passInput.SendKeys(password);
-
             driver.FindElement(signinButton).Click();
-
             wait.Until(ExpectedConditions.ElementIsVisible(error));
             Assert.IsTrue(driver.FindElement(error).Displayed);
             Assert.IsTrue(driver.FindElement(errorMessage).Displayed);
         }
 
-        [Ignore("alternative example")]
+        
         [TestCase("JohnDoe", "passw0rd")]
-        [Author("AlexGrech")]
-        [Category("Test case ID: 2")]
-        [Description("Verify that it is possible to login with valid credentials")]
-        public void Test2(string email, string password)
-        {
-            WebDriverWait wait = new(driver, TimeSpan.FromSeconds(5)); //explicit wait declaration
-            wait.Until(ExpectedConditions.ElementIsVisible(loginButtonMainPage));
-            driver.FindElement(loginButtonMainPage).Click();
-            IWebElement emailInput = driver.FindElement(emailField);
-            wait.Until(ExpectedConditions.ElementIsVisible(emailField));
-            emailInput.Clear();
-            emailInput.SendKeys(email);
-            IWebElement passInput = driver.FindElement(passwordField);
-            passInput.Clear();
-            passInput.SendKeys(password);
-            driver.FindElement(signinButton).Click();
-            wait.Until(ExpectedConditions.ElementIsVisible(error));
-            Assert.IsTrue(driver.FindElement(error).Displayed);
-            Assert.IsTrue(driver.FindElement(errorMessage).Displayed);
-        }
-
-        [Ignore("alternative example")]
         [TestCase("LiliaJY", "isNotMe")]
-        [Author("AlexGrech")]
-        [Category("Test case ID: 2")]
-        [Description("Verify that it is possible to login with valid credentials")]
-        public void Test3(string email, string password)
-        {
-            WebDriverWait wait = new(driver, TimeSpan.FromSeconds(5)); //explicit wait declaration
-            wait.Until(ExpectedConditions.ElementIsVisible(loginButtonMainPage));
-            driver.FindElement(loginButtonMainPage).Click();
-            IWebElement emailInput = driver.FindElement(emailField);
-            wait.Until(ExpectedConditions.ElementIsVisible(emailField));
-            emailInput.Clear();
-            emailInput.SendKeys(email);
-            IWebElement passInput = driver.FindElement(passwordField);
-            passInput.Clear();
-            passInput.SendKeys(password);
-            driver.FindElement(signinButton).Click();
-            wait.Until(ExpectedConditions.ElementIsVisible(error));
-            Assert.IsTrue(driver.FindElement(error).Displayed);
-            Assert.IsTrue(driver.FindElement(errorMessage).Displayed);
-        }
-
-        [Ignore("alternative example")]
         [TestCase("GoingTo", "BeAuto!")]
         [Author("AlexGrech")]
         [Category("Test case ID: 2")]
         [Description("Verify that it is possible to login with valid credentials")]
-        public void Test4(string email, string password)
+        public void Test2(string email, string password)
         {
             WebDriverWait wait = new(driver, TimeSpan.FromSeconds(5)); //explicit wait declaration
             wait.Until(ExpectedConditions.ElementIsVisible(loginButtonMainPage));
