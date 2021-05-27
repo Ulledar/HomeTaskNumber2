@@ -51,8 +51,8 @@ namespace HomeTaskNumber2
             passInput.SendKeys(password);
             driver.FindElement(signinButton).Click();
             wait.Until(ExpectedConditions.ElementIsVisible(error));
-            Assert.IsTrue(driver.FindElement(error).Displayed);
-            Assert.IsTrue(driver.FindElement(errorMessage).Displayed);
+            Assert.IsTrue(driver.FindElement(error).Displayed, "No error");
+            Assert.IsTrue(driver.FindElement(errorMessage).Displayed, "No error text shown");
         }
 
         [Parallelizable]
@@ -76,8 +76,8 @@ namespace HomeTaskNumber2
             passInput.SendKeys(password);
             driver.FindElement(signinButton).Click();
             wait.Until(ExpectedConditions.ElementIsVisible(error));
-            Assert.IsTrue(driver.FindElement(error).Displayed);
-            Assert.IsTrue(driver.FindElement(errorMessage).Displayed);
+            Assert.IsTrue(driver.FindElement(error).Displayed, "No error");
+            Assert.IsTrue(driver.FindElement(errorMessage).Displayed, "No error text shown");
         }
 
         public static IEnumerable<TestCaseData> TestData
