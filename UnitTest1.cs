@@ -27,7 +27,6 @@ namespace HomeTaskNumber2
         public void Setup()
         {
             driver = new ChromeDriver();
-            //driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);  //implicit wait declaration
             driver.Manage().Window.Maximize();
             driver.Manage().Cookies.DeleteAllCookies();
             driver.Navigate().GoToUrl(testPageUrl);
@@ -40,7 +39,7 @@ namespace HomeTaskNumber2
         [Description("Verify that it is possible to login with valid credentials")]
         public void Test1(string email, string password)
         {
-            WebDriverWait wait = new(driver, TimeSpan.FromSeconds(5)); //explicit wait declaration
+            WebDriverWait wait = new(driver, TimeSpan.FromSeconds(5));
             wait.Until(ExpectedConditions.ElementIsVisible(signinButtonMainPage));
             driver.FindElement(signinButtonMainPage).Click();
             IWebElement emailInput = driver.FindElement(emailField);
@@ -65,7 +64,7 @@ namespace HomeTaskNumber2
         [Description("Verify that it is possible to login with valid credentials")]
         public void Test2(string email, string password)
         {
-            WebDriverWait wait = new(driver, TimeSpan.FromSeconds(5)); //explicit wait declaration
+            WebDriverWait wait = new(driver, TimeSpan.FromSeconds(5));
             wait.Until(ExpectedConditions.ElementIsVisible(signinButtonMainPage));
             driver.FindElement(signinButtonMainPage).Click();
             IWebElement emailInput = driver.FindElement(emailField);
