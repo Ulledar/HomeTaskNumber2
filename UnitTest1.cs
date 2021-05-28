@@ -39,18 +39,18 @@ namespace HomeTaskNumber2
         [Description("Verify that it is possible to login with valid credentials")]
         public void Test1(string email, string password)
         {
-            WebDriverWait wait = new(driver, TimeSpan.FromSeconds(5));
-            wait.Until(ExpectedConditions.ElementIsVisible(signinButtonMainPage));
+            WebDriverWait wait = new WebDriverWait(driver, new TimeSpan(0, 0, 10));
+            wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(signinButtonMainPage));
             driver.FindElement(signinButtonMainPage).Click();
             IWebElement emailInput = driver.FindElement(emailField);
-            wait.Until(ExpectedConditions.ElementIsVisible(emailField));
+            wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(emailField));
             emailInput.Clear();
             emailInput.SendKeys(email);
             IWebElement passInput = driver.FindElement(passwordField);
             passInput.Clear();
             passInput.SendKeys(password);
             driver.FindElement(signinButton).Click();
-            wait.Until(ExpectedConditions.ElementIsVisible(error));
+            wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(error));
             Assert.IsTrue(driver.FindElement(error).Displayed, "No error");
             Assert.IsTrue(driver.FindElement(errorMessage).Displayed, "No error text shown");
         }
@@ -64,18 +64,18 @@ namespace HomeTaskNumber2
         [Description("Verify that it is possible to login with valid credentials")]
         public void Test2(string email, string password)
         {
-            WebDriverWait wait = new(driver, TimeSpan.FromSeconds(5));
-            wait.Until(ExpectedConditions.ElementIsVisible(signinButtonMainPage));
+            WebDriverWait wait = new WebDriverWait(driver, new TimeSpan(0, 0, 10));
+            wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(signinButtonMainPage));
             driver.FindElement(signinButtonMainPage).Click();
             IWebElement emailInput = driver.FindElement(emailField);
-            wait.Until(ExpectedConditions.ElementIsVisible(emailField));
+            wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(emailField));
             emailInput.Clear();
             emailInput.SendKeys(email);
             IWebElement passInput = driver.FindElement(passwordField);
             passInput.Clear();
             passInput.SendKeys(password);
             driver.FindElement(signinButton).Click();
-            wait.Until(ExpectedConditions.ElementIsVisible(error));
+            wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(error));
             Assert.IsTrue(driver.FindElement(error).Displayed, "No error");
             Assert.IsTrue(driver.FindElement(errorMessage).Displayed, "No error text shown");
         }
